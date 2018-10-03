@@ -2,15 +2,14 @@
 const express = require('express');
 const router = express.Router();
 
-//importa rotas de user
-const usersRoute = require('./user');
-
-//defina rotas para /user
-router.use('/users', usersRoute);
-
 //define rota raiz
 router.get('/', (req, res) => {
     res.send('Hello World');
 });
+
+//importa rotas de user
+const usersRoute = require('./users');
+//defina rotas para /user
+router.use('/users', usersRoute);
 
 module.exports = router;

@@ -4,14 +4,14 @@ const app = express();
 const bodyParser = require('body-parser');
 
 //importa a configuração do banco de dados
-const database = require('./config/database');
+const database = require('../config/database');
 
 //importa o arquivo raiz de rotas
 const routes = require('./routes');
 
 
-var configureExpress = () => {
-    app.use(bodyParser.json);
+let configureExpress = () => {
+    app.use(bodyParser.json());
     app.use('/', routes);
     return app;
 }
